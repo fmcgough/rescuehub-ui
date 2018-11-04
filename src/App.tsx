@@ -1,20 +1,17 @@
 import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
+import { Header } from './components/Header';
 import { About } from './containers/About';
 import { Home } from './containers/Home';
 
-import './App.css';
-import logo from './logo.svg';
+import './themes/app.theme.scss';
 
 class App extends React.Component {
     render() {
         return (
             <div className='App'>
-                <header className='App-header'>
-                    <img src={logo} className='App-logo' alt='logo' />
-                    <h1 className='App-title'>Welcome to React</h1>
-                </header>
+                <Header />
                 <div className='container-fluid'>
                     <Switch>
                         <Route exact path='/' component={Home} />
