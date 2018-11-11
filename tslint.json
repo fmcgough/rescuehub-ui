@@ -4,7 +4,8 @@
     "interface-name": [true, "never-prefix"],
     "member-access": [true, "no-public"],
     "semicolon": [true, "always"],
-    "jsx-boolean-value": [false]
+    "jsx-boolean-value": false,
+    "ordered-imports": false
   },
   "linterOptions": {
     "exclude": [
