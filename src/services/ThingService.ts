@@ -8,6 +8,6 @@ export class ThingService extends HttpService {
     }
 
     getThings(): Promise<Thing[]> {
-        return super.get('/things').then(response => response.data as Thing[]);
+        return super.get('/api/things').then(response => response.data as Thing[]);
     }
 }

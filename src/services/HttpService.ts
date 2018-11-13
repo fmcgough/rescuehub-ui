@@ -6,9 +6,10 @@ export class HttpService {
     private config: AxiosRequestConfig;
 
     constructor() {
+        const port = window.location.port === '' ? '' : `:${window.location.port}`;
         this.config = {
             // TODO get this from config somehow
-            baseURL: 'http://localhost:8080',
+            baseURL: `${window.location.protocol}//${window.location.hostname}${port}`,
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
