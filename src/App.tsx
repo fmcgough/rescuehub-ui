@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import { Header } from './components/Header';
 import { About } from './containers/About';
 import { Home } from './containers/Home';
+import { Login } from './containers/Login';
 
 import './themes/app.theme.scss';
 
@@ -14,6 +15,7 @@ class App extends React.Component {
                 <Header />
                 <div className='container-fluid'>
                     <Switch>
+                        <Route exact path='/login' component={Login} />
                         <Route exact path='/' component={Home} />
                         <Route exact path='/about' component={About} />
                     </Switch>
