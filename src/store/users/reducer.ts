@@ -2,7 +2,9 @@ import { Reducer } from 'redux';
 import { UserState } from './types';
 
 export const initialState: UserState = {
-    user: undefined
+    authError: undefined,
+    authToken: undefined,
+    user: undefined,
 };
 
 const reducer: Reducer<UserState> = (state = initialState, action) => {

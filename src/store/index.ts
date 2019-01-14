@@ -6,6 +6,7 @@ import thingSaga from './things/sagas';
 import { thingReducer, initialState as thingState } from './things/reducer';
 import { UserState } from './users/types';
 import { userReducer, initialState as userState } from './users/reducer';
+import userSaga from './users/sagas';
 
 export interface RootState {
     things: ThingState;
@@ -30,6 +31,7 @@ export const rootReducer = combineReducers<RootState>({
 export function* rootSaga() {
     yield all([
         fork(thingSaga),
+        fork(userSaga),
         // Fork any other store sagas here...
     ]);
 }

@@ -3,8 +3,8 @@ import { HttpService } from './HttpService';
 
 export class ThingService extends HttpService {
 
-    constructor() {
-        super();
+    constructor(token: string) {
+        super(token);
     }
 
     getThings(): Promise<Thing[]> {

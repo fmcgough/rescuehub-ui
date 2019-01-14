@@ -8,15 +8,20 @@ interface LoginButtonProps {
 }
 
 const LoginButton: React.SFC<LoginButtonProps> = (props: LoginButtonProps) => (
-    <a href={props.link} className='btn btn-icon btn-neutral'>
-        <span className='btn-inner--icon'>
-            <i className={`fa ${props.iconClass}`} />
-        </span>
-        <span className='btn-inner--text'>{props.name}</span>
-    </a>
+    <form action={props.link} method='POST'>
+        <input type='hidden' name='scope' value='public_profile' />
+        <button type='submit' className='btn btn-icon btn-neutral'>
+            <span className='btn-inner--icon'>
+                <i className={`fa ${props.iconClass}`} />
+            </span>
+            <span className='btn-inner--text'>{props.name}</span>
+        </button>
+    </form>
 );
 
-export const Login: React.SFC<{}> = (props: {}) => (
+export const Login: React.SFC<{}> = (props: {}) => {
+
+    return (
     <section className='section section-lg'>
         <div className='container pt-lg-md'>
             <div className='row justify-content-center'>
@@ -27,9 +32,13 @@ export const Login: React.SFC<{}> = (props: {}) => (
                                 <small>Sign in with</small>
                             </div>
                             <div className='btn-wrapper text-center'>
-                                <LoginButton link='/api/oauth2/authorization/facebook' name='Facebook'
+                                <LoginButton
+                                    link={`/api/signin/facebook`}
+                                    name='Facebook'
                                     iconClass='fa-facebook-official' />
-                                <LoginButton link='#' name='Google' iconClass='fa-google' />
+                                <LoginButton link='#'
+                                    name='Google'
+                                    iconClass='fa-google' />
                             </div>
                         </div>
                     </div>
@@ -43,5 +52,5 @@ export const Login: React.SFC<{}> = (props: {}) => (
                 </div>
             </div>
         </div>
-    </section>
-);
+    </section>);
+};

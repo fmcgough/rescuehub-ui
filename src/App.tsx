@@ -5,6 +5,7 @@ import { Header } from './components/Header';
 import { About } from './containers/About';
 import { Home } from './containers/Home';
 import { Login } from './containers/Login';
+import { RedirectHandler } from './containers/RedirectHandler';
 
 import './themes/app.theme.scss';
 
@@ -18,6 +19,7 @@ class App extends React.Component {
                         <Route exact path='/login' component={Login} />
                         <Route exact path='/' component={Home} />
                         <Route exact path='/about' component={About} />
+                        <Route path='/oauth2/callback' component={RedirectHandler} />
                     </Switch>
                 </div>
             </div>

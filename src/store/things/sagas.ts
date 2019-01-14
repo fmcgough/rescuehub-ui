@@ -5,7 +5,7 @@ import { ThingActionTypes } from './types';
 
 // Use redux-saga to trigger actions asynchronously, with a generator function
 function* handleFetch() {
-    const service = new ThingService();
+    const service = new ThingService(''); // TODO get token from localStorage
     try {
         const result = yield call(() => service.getThings());
         if (result.error) {

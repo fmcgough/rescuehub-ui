@@ -5,13 +5,13 @@ export class HttpService {
 
     private config: AxiosRequestConfig;
 
-    constructor() {
+    constructor(token: string) {
         const port = window.location.port === '' ? '' : `:${window.location.port}`;
         this.config = {
-            // TODO get this from config somehow
             baseURL: `${window.location.protocol}//${window.location.hostname}${port}`,
             headers: {
                 'Accept': 'application/json',
+                'Authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json',
             }
         };
